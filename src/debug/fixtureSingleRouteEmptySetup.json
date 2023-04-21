@@ -1,0 +1,665 @@
+{
+    "past": [
+        {
+            "setup": {
+                "setups": [],
+                "destinationVolume": 1600,
+                "showSetup": false,
+                "openSetup": null
+            },
+            "mapbox": {
+                "originOffRoadMarker": null,
+                "destinationOffRoadMarker": null,
+                "offRoadMode": "origin",
+                "originOffRoad": null,
+                "destinationOffRoad": null,
+                "routes": [],
+                "previousRoutes": [],
+                "engineMarkers": [],
+                "routeEdit": true,
+                "showSidebar": false
+            }
+        },
+        {
+            "setup": {
+                "setups": [],
+                "destinationVolume": 1600,
+                "showSetup": false,
+                "openSetup": null
+            },
+            "mapbox": {
+                "originOffRoadMarker": null,
+                "destinationOffRoadMarker": null,
+                "offRoadMode": "destination",
+                "originOffRoad": null,
+                "destinationOffRoad": null,
+                "routes": [],
+                "previousRoutes": [],
+                "engineMarkers": [],
+                "routeEdit": true,
+                "showSidebar": false
+            }
+        },
+        {
+            "setup": {
+                "setups": [],
+                "destinationVolume": 1600,
+                "showSetup": false,
+                "openSetup": null
+            },
+            "mapbox": {
+                "originOffRoadMarker": null,
+                "destinationOffRoadMarker": null,
+                "offRoadMode": "destination",
+                "originOffRoad": [
+                    8.383667836222088,
+                    48.92285451114296
+                ],
+                "destinationOffRoad": null,
+                "routes": [],
+                "previousRoutes": [],
+                "engineMarkers": [],
+                "routeEdit": true,
+                "showSidebar": false
+            }
+        },
+        {
+            "setup": {
+                "setups": [],
+                "destinationVolume": 1600,
+                "showSetup": false,
+                "openSetup": null
+            },
+            "mapbox": {
+                "originOffRoadMarker": null,
+                "destinationOffRoadMarker": null,
+                "offRoadMode": null,
+                "originOffRoad": [
+                    8.383667836222088,
+                    48.92285451114296
+                ],
+                "destinationOffRoad": null,
+                "routes": [],
+                "previousRoutes": [],
+                "engineMarkers": [],
+                "routeEdit": true,
+                "showSidebar": false
+            }
+        },
+        {
+            "setup": {
+                "setups": [],
+                "destinationVolume": 1600,
+                "showSetup": false,
+                "openSetup": null
+            },
+            "mapbox": {
+                "originOffRoadMarker": null,
+                "destinationOffRoadMarker": null,
+                "offRoadMode": null,
+                "originOffRoad": [
+                    8.383667836222088,
+                    48.92285451114296
+                ],
+                "destinationOffRoad": [
+                    8.386775544966696,
+                    48.92100917318126
+                ],
+                "routes": [],
+                "previousRoutes": [],
+                "engineMarkers": [],
+                "routeEdit": true,
+                "showSidebar": false
+            }
+        },
+        {
+            "setup": {
+                "setups": [],
+                "destinationVolume": 1600,
+                "showSetup": false,
+                "openSetup": null
+            },
+            "mapbox": {
+                "originOffRoadMarker": null,
+                "destinationOffRoadMarker": null,
+                "offRoadMode": null,
+                "originOffRoad": [
+                    8.383667836222088,
+                    48.92285451114296
+                ],
+                "destinationOffRoad": [
+                    8.386775544966696,
+                    48.92100917318126
+                ],
+                "routes": [
+                    {
+                        "name": "yfriH}ldr@Ne@Ti@Vi@Vg@Vi@Vi@Vg@Ti@Vg@Vi@Vg@Vi@Vg@Vg@Vi@",
+                        "coordinates": [
+                            {
+                                "lng": 8.38367,
+                                "lat": 48.92285,
+                                "distance": 0,
+                                "distanceReversed": 310,
+                                "distancePartial": 0,
+                                "distanceReversedPartial": 310,
+                                "elevation": 129
+                            },
+                            {
+                                "lng": 8.38386,
+                                "lat": 48.92277,
+                                "distance": 20,
+                                "distanceReversed": 290,
+                                "distancePartial": 20,
+                                "distanceReversedPartial": 290,
+                                "elevation": 131
+                            },
+                            {
+                                "lng": 8.38407,
+                                "lat": 48.92266,
+                                "distance": 40,
+                                "distanceReversed": 270,
+                                "distancePartial": 40,
+                                "distanceReversedPartial": 270,
+                                "elevation": 133
+                            },
+                            {
+                                "lng": 8.38428,
+                                "lat": 48.92254,
+                                "distance": 60,
+                                "distanceReversed": 250,
+                                "distancePartial": 60,
+                                "distanceReversedPartial": 250,
+                                "elevation": 134
+                            },
+                            {
+                                "lng": 8.38448,
+                                "lat": 48.92242,
+                                "distance": 80,
+                                "distanceReversed": 230,
+                                "distancePartial": 80,
+                                "distanceReversedPartial": 230,
+                                "elevation": 136
+                            },
+                            {
+                                "lng": 8.38469,
+                                "lat": 48.9223,
+                                "distance": 100,
+                                "distanceReversed": 210,
+                                "distancePartial": 100,
+                                "distanceReversedPartial": 210,
+                                "elevation": 136
+                            },
+                            {
+                                "lng": 8.3849,
+                                "lat": 48.92218,
+                                "distance": 120,
+                                "distanceReversed": 190,
+                                "distancePartial": 120,
+                                "distanceReversedPartial": 190,
+                                "elevation": 136
+                            },
+                            {
+                                "lng": 8.3851,
+                                "lat": 48.92206,
+                                "distance": 140,
+                                "distanceReversed": 170,
+                                "distancePartial": 140,
+                                "distanceReversedPartial": 170,
+                                "elevation": 136
+                            },
+                            {
+                                "lng": 8.38531,
+                                "lat": 48.92195,
+                                "distance": 160,
+                                "distanceReversed": 150,
+                                "distancePartial": 160,
+                                "distanceReversedPartial": 150,
+                                "elevation": 136
+                            },
+                            {
+                                "lng": 8.38551,
+                                "lat": 48.92183,
+                                "distance": 180,
+                                "distanceReversed": 130,
+                                "distancePartial": 180,
+                                "distanceReversedPartial": 130,
+                                "elevation": 137
+                            },
+                            {
+                                "lng": 8.38572,
+                                "lat": 48.92171,
+                                "distance": 200,
+                                "distanceReversed": 110,
+                                "distancePartial": 200,
+                                "distanceReversedPartial": 110,
+                                "elevation": 138
+                            },
+                            {
+                                "lng": 8.38592,
+                                "lat": 48.92159,
+                                "distance": 220,
+                                "distanceReversed": 90,
+                                "distancePartial": 220,
+                                "distanceReversedPartial": 90,
+                                "elevation": 139
+                            },
+                            {
+                                "lng": 8.38613,
+                                "lat": 48.92147,
+                                "distance": 240,
+                                "distanceReversed": 70,
+                                "distancePartial": 240,
+                                "distanceReversedPartial": 70,
+                                "elevation": 140
+                            },
+                            {
+                                "lng": 8.38633,
+                                "lat": 48.92135,
+                                "distance": 260,
+                                "distanceReversed": 50,
+                                "distancePartial": 260,
+                                "distanceReversedPartial": 50,
+                                "elevation": 141
+                            },
+                            {
+                                "lng": 8.38653,
+                                "lat": 48.92123,
+                                "distance": 280,
+                                "distanceReversed": 30,
+                                "distancePartial": 280,
+                                "distanceReversedPartial": 30,
+                                "elevation": 142
+                            },
+                            {
+                                "lng": 8.38674,
+                                "lat": 48.92111,
+                                "distance": 300,
+                                "distanceReversed": 10,
+                                "distancePartial": 300,
+                                "distanceReversedPartial": 10,
+                                "elevation": 144
+                            }
+                        ],
+                        "displayName": "Strecke 1"
+                    }
+                ],
+                "previousRoutes": [],
+                "engineMarkers": [],
+                "routeEdit": true,
+                "showSidebar": false
+            }
+        }
+    ],
+    "present": {
+        "setup": {
+            "setups": [
+                {
+                    "route": "yfriH}ldr@Ne@Ti@Vi@Vg@Vi@Vi@Vg@Ti@Vg@Vi@Vg@Vi@Vg@Vg@Vi@",
+                    "displayName": "Strecke 1",
+                    "customName": false,
+                    "fooFactor": 100
+                }
+            ],
+            "destinationVolume": 1600,
+            "showSetup": false,
+            "openSetup": null
+        },
+        "mapbox": {
+            "originOffRoadMarker": null,
+            "destinationOffRoadMarker": null,
+            "offRoadMode": null,
+            "originOffRoad": [
+                8.383667836222088,
+                48.92285451114296
+            ],
+            "destinationOffRoad": [
+                8.386775544966696,
+                48.92100917318126
+            ],
+            "routes": [
+                {
+                    "name": "yfriH}ldr@Ne@Ti@Vi@Vg@Vi@Vi@Vg@Ti@Vg@Vi@Vg@Vi@Vg@Vg@Vi@",
+                    "coordinates": [
+                        {
+                            "lng": 8.38367,
+                            "lat": 48.92285,
+                            "distance": 0,
+                            "distanceReversed": 310,
+                            "distancePartial": 0,
+                            "distanceReversedPartial": 310,
+                            "elevation": 129
+                        },
+                        {
+                            "lng": 8.38386,
+                            "lat": 48.92277,
+                            "distance": 20,
+                            "distanceReversed": 290,
+                            "distancePartial": 20,
+                            "distanceReversedPartial": 290,
+                            "elevation": 131
+                        },
+                        {
+                            "lng": 8.38407,
+                            "lat": 48.92266,
+                            "distance": 40,
+                            "distanceReversed": 270,
+                            "distancePartial": 40,
+                            "distanceReversedPartial": 270,
+                            "elevation": 133
+                        },
+                        {
+                            "lng": 8.38428,
+                            "lat": 48.92254,
+                            "distance": 60,
+                            "distanceReversed": 250,
+                            "distancePartial": 60,
+                            "distanceReversedPartial": 250,
+                            "elevation": 134
+                        },
+                        {
+                            "lng": 8.38448,
+                            "lat": 48.92242,
+                            "distance": 80,
+                            "distanceReversed": 230,
+                            "distancePartial": 80,
+                            "distanceReversedPartial": 230,
+                            "elevation": 136
+                        },
+                        {
+                            "lng": 8.38469,
+                            "lat": 48.9223,
+                            "distance": 100,
+                            "distanceReversed": 210,
+                            "distancePartial": 100,
+                            "distanceReversedPartial": 210,
+                            "elevation": 136
+                        },
+                        {
+                            "lng": 8.3849,
+                            "lat": 48.92218,
+                            "distance": 120,
+                            "distanceReversed": 190,
+                            "distancePartial": 120,
+                            "distanceReversedPartial": 190,
+                            "elevation": 136
+                        },
+                        {
+                            "lng": 8.3851,
+                            "lat": 48.92206,
+                            "distance": 140,
+                            "distanceReversed": 170,
+                            "distancePartial": 140,
+                            "distanceReversedPartial": 170,
+                            "elevation": 136
+                        },
+                        {
+                            "lng": 8.38531,
+                            "lat": 48.92195,
+                            "distance": 160,
+                            "distanceReversed": 150,
+                            "distancePartial": 160,
+                            "distanceReversedPartial": 150,
+                            "elevation": 136
+                        },
+                        {
+                            "lng": 8.38551,
+                            "lat": 48.92183,
+                            "distance": 180,
+                            "distanceReversed": 130,
+                            "distancePartial": 180,
+                            "distanceReversedPartial": 130,
+                            "elevation": 137
+                        },
+                        {
+                            "lng": 8.38572,
+                            "lat": 48.92171,
+                            "distance": 200,
+                            "distanceReversed": 110,
+                            "distancePartial": 200,
+                            "distanceReversedPartial": 110,
+                            "elevation": 138
+                        },
+                        {
+                            "lng": 8.38592,
+                            "lat": 48.92159,
+                            "distance": 220,
+                            "distanceReversed": 90,
+                            "distancePartial": 220,
+                            "distanceReversedPartial": 90,
+                            "elevation": 139
+                        },
+                        {
+                            "lng": 8.38613,
+                            "lat": 48.92147,
+                            "distance": 240,
+                            "distanceReversed": 70,
+                            "distancePartial": 240,
+                            "distanceReversedPartial": 70,
+                            "elevation": 140
+                        },
+                        {
+                            "lng": 8.38633,
+                            "lat": 48.92135,
+                            "distance": 260,
+                            "distanceReversed": 50,
+                            "distancePartial": 260,
+                            "distanceReversedPartial": 50,
+                            "elevation": 141
+                        },
+                        {
+                            "lng": 8.38653,
+                            "lat": 48.92123,
+                            "distance": 280,
+                            "distanceReversed": 30,
+                            "distancePartial": 280,
+                            "distanceReversedPartial": 30,
+                            "elevation": 142
+                        },
+                        {
+                            "lng": 8.38674,
+                            "lat": 48.92111,
+                            "distance": 300,
+                            "distanceReversed": 10,
+                            "distancePartial": 300,
+                            "distanceReversedPartial": 10,
+                            "elevation": 144
+                        }
+                    ],
+                    "displayName": "Strecke 1"
+                }
+            ],
+            "previousRoutes": [],
+            "engineMarkers": [],
+            "routeEdit": true,
+            "showSidebar": false
+        }
+    },
+    "future": [],
+    "group": null,
+    "_latestUnfiltered": {
+        "setup": {
+            "setups": [
+                {
+                    "route": "yfriH}ldr@Ne@Ti@Vi@Vg@Vi@Vi@Vg@Ti@Vg@Vi@Vg@Vi@Vg@Vg@Vi@",
+                    "displayName": "Strecke 1",
+                    "customName": false,
+                    "fooFactor": 100
+                }
+            ],
+            "destinationVolume": 1600,
+            "showSetup": false,
+            "openSetup": null
+        },
+        "mapbox": {
+            "originOffRoadMarker": null,
+            "destinationOffRoadMarker": null,
+            "offRoadMode": null,
+            "originOffRoad": [
+                8.383667836222088,
+                48.92285451114296
+            ],
+            "destinationOffRoad": [
+                8.386775544966696,
+                48.92100917318126
+            ],
+            "routes": [
+                {
+                    "name": "yfriH}ldr@Ne@Ti@Vi@Vg@Vi@Vi@Vg@Ti@Vg@Vi@Vg@Vi@Vg@Vg@Vi@",
+                    "coordinates": [
+                        {
+                            "lng": 8.38367,
+                            "lat": 48.92285,
+                            "distance": 0,
+                            "distanceReversed": 310,
+                            "distancePartial": 0,
+                            "distanceReversedPartial": 310,
+                            "elevation": 129
+                        },
+                        {
+                            "lng": 8.38386,
+                            "lat": 48.92277,
+                            "distance": 20,
+                            "distanceReversed": 290,
+                            "distancePartial": 20,
+                            "distanceReversedPartial": 290,
+                            "elevation": 131
+                        },
+                        {
+                            "lng": 8.38407,
+                            "lat": 48.92266,
+                            "distance": 40,
+                            "distanceReversed": 270,
+                            "distancePartial": 40,
+                            "distanceReversedPartial": 270,
+                            "elevation": 133
+                        },
+                        {
+                            "lng": 8.38428,
+                            "lat": 48.92254,
+                            "distance": 60,
+                            "distanceReversed": 250,
+                            "distancePartial": 60,
+                            "distanceReversedPartial": 250,
+                            "elevation": 134
+                        },
+                        {
+                            "lng": 8.38448,
+                            "lat": 48.92242,
+                            "distance": 80,
+                            "distanceReversed": 230,
+                            "distancePartial": 80,
+                            "distanceReversedPartial": 230,
+                            "elevation": 136
+                        },
+                        {
+                            "lng": 8.38469,
+                            "lat": 48.9223,
+                            "distance": 100,
+                            "distanceReversed": 210,
+                            "distancePartial": 100,
+                            "distanceReversedPartial": 210,
+                            "elevation": 136
+                        },
+                        {
+                            "lng": 8.3849,
+                            "lat": 48.92218,
+                            "distance": 120,
+                            "distanceReversed": 190,
+                            "distancePartial": 120,
+                            "distanceReversedPartial": 190,
+                            "elevation": 136
+                        },
+                        {
+                            "lng": 8.3851,
+                            "lat": 48.92206,
+                            "distance": 140,
+                            "distanceReversed": 170,
+                            "distancePartial": 140,
+                            "distanceReversedPartial": 170,
+                            "elevation": 136
+                        },
+                        {
+                            "lng": 8.38531,
+                            "lat": 48.92195,
+                            "distance": 160,
+                            "distanceReversed": 150,
+                            "distancePartial": 160,
+                            "distanceReversedPartial": 150,
+                            "elevation": 136
+                        },
+                        {
+                            "lng": 8.38551,
+                            "lat": 48.92183,
+                            "distance": 180,
+                            "distanceReversed": 130,
+                            "distancePartial": 180,
+                            "distanceReversedPartial": 130,
+                            "elevation": 137
+                        },
+                        {
+                            "lng": 8.38572,
+                            "lat": 48.92171,
+                            "distance": 200,
+                            "distanceReversed": 110,
+                            "distancePartial": 200,
+                            "distanceReversedPartial": 110,
+                            "elevation": 138
+                        },
+                        {
+                            "lng": 8.38592,
+                            "lat": 48.92159,
+                            "distance": 220,
+                            "distanceReversed": 90,
+                            "distancePartial": 220,
+                            "distanceReversedPartial": 90,
+                            "elevation": 139
+                        },
+                        {
+                            "lng": 8.38613,
+                            "lat": 48.92147,
+                            "distance": 240,
+                            "distanceReversed": 70,
+                            "distancePartial": 240,
+                            "distanceReversedPartial": 70,
+                            "elevation": 140
+                        },
+                        {
+                            "lng": 8.38633,
+                            "lat": 48.92135,
+                            "distance": 260,
+                            "distanceReversed": 50,
+                            "distancePartial": 260,
+                            "distanceReversedPartial": 50,
+                            "elevation": 141
+                        },
+                        {
+                            "lng": 8.38653,
+                            "lat": 48.92123,
+                            "distance": 280,
+                            "distanceReversed": 30,
+                            "distancePartial": 280,
+                            "distanceReversedPartial": 30,
+                            "elevation": 142
+                        },
+                        {
+                            "lng": 8.38674,
+                            "lat": 48.92111,
+                            "distance": 300,
+                            "distanceReversed": 10,
+                            "distancePartial": 300,
+                            "distanceReversedPartial": 10,
+                            "elevation": 144
+                        }
+                    ],
+                    "displayName": "Strecke 1"
+                }
+            ],
+            "previousRoutes": [],
+            "engineMarkers": [],
+            "routeEdit": true,
+            "showSidebar": false
+        }
+    },
+    "index": 6,
+    "limit": 7
+}
