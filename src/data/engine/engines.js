@@ -38,7 +38,7 @@ export const availableEngines = [
     { name: "FP 32/8", volume: 3200, pressureSystem: 8, DIN: 14420, sizes: ['B'], entryPoints: { 'A': 1, 'B': 2 }, exitPoints: { 'A': 1, 'B': 2 } },
     { name: "PFP 8/8", volume: 800, pressureSystem: 8, DIN: 14420, sizes: ['B'], entryPoints: { 'A': 1, 'B': 2 }, exitPoints: { 'A': 1, 'B': 2 } },
     { name: "PFP 16/8", volume: 1600, pressureSystem: 8, DIN: 14420, sizes: ['B'], entryPoints: { 'A': 1, 'B': 2 }, exitPoints: { 'A': 1, 'B': 2 } },
-    { name: "FPN 6-500 ", volume: 500, pressureSystem: 10, DIN: 1028, sizes: ['B'], entryPoints: { 'A': 1, 'B': 2 }, exitPoints: { 'A': 1, 'B': 2 } },
+    { name: "FPN 6-500 ", volume: 500, pressureSystem: 6, DIN: 1028, sizes: ['B'], entryPoints: { 'A': 1, 'B': 2 }, exitPoints: { 'A': 1, 'B': 2 } },
     { name: "FPN 10-1000", volume: 1000, pressureSystem: 10, DIN: 1028, sizes: ['B'], entryPoints: { 'A': 1, 'B': 2 }, exitPoints: { 'A': 1, 'B': 2 } },
     { name: "FPN 10-2000", volume: 2000, pressureSystem: 10, DIN: 1028, sizes: ['B'], entryPoints: { 'A': 2, 'B': 4 }, exitPoints: { 'A': 2, 'B': 4 } },
     { name: "FPN 10-3000", volume: 3000, pressureSystem: 10, DIN: 1028, sizes: ['B'], entryPoints: { 'A': 2, 'B': 4 }, exitPoints: { 'A': 2, 'B': 4 } },
