@@ -111,8 +111,11 @@ export const getEnginePositions = (routes, setupData) => {
 
     const enginePositions = {}
 
-    routes.forEach(route => {
+    routes.forEach((route,i) => {
         const setup = setupData.setups.find(setup => setup.route === route.name)
+        const hoselineCountIn = i === 0
+            ? setup && setup.hoselineCount || ''
+            : setupData.setups[i-1].hoselineCount * setupData.setups[i-1].count / setup.count
 
         route.coordinates.forEach((coord, index) => {
             let key = JSON.stringify(coord.lat) + JSON.stringify(coord.lng)
@@ -120,7 +123,7 @@ export const getEnginePositions = (routes, setupData) => {
                 const { coordinates, ...engineData } = route
                 const cuttable = index !== 0 && index !== route.coordinates.length - 1
                 const customPopupProps = Object.assign(
-                    {}, { ...coord }, { ...engineData }, { setup: setup, cuttable, index }
+                    {}, { ...coord }, { ...engineData }, { setup: setup, cuttable, index, hoselineCountIn }
                 )
                 enginePositions[key] = customPopupProps
             }

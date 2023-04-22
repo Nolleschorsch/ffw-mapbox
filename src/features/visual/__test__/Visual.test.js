@@ -20,7 +20,7 @@ describe('Visual', () => {
             present: {
                 mapbox: {
                     routes: [
-                        {}
+                        {coordinates: [{}]}
                     ]
                 },
                 setup: {

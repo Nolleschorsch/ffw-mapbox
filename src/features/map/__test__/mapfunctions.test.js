@@ -223,16 +223,16 @@ describe('getEnginePositions', () => {
         ]
         const setupData = {
             setups: [
-                { route: 'foo' },
-                { route: 'bar' },
+                { route: 'foo', hoselineCount: 2, count: 1},
+                { route: 'bar', hoselineCount: 1, count: 1},
             ]
         }
         const result = mapfunctions.getEnginePositions(routes, setupData)
         expect(result).toEqual({
-            "11": { cuttable: false, engine: true, index: 0, lat: 1, lng: 1, name: "foo", setup: { route: "foo" } },
-            "22": { cuttable: false, engine: true, index: 0, lat: 2, lng: 2, name: "bar", setup: { route: "bar" } },
-            "33": { cuttable: true, engine: true, index: 1, lat: 3, lng: 3, name: "bar", setup: { route: "bar" } },
-            "44": { cuttable: false, engine: true, index: 2, lat: 4, lng: 4, name: "bar", setup: { route: "bar" } }
+            "11": { cuttable: false, engine: true, index: 0, lat: 1, lng: 1, name: "foo", setup: { route: "foo", hoselineCount: 2, count: 1 }, hoselineCountIn: 2 },
+            "22": { cuttable: false, engine: true, index: 0, lat: 2, lng: 2, name: "bar", setup: { route: "bar", hoselineCount: 1, count: 1 }, hoselineCountIn: 2},
+            "33": { cuttable: true, engine: true, index: 1, lat: 3, lng: 3, name: "bar", setup: { route: "bar", hoselineCount: 1, count: 1 }, hoselineCountIn: 2},
+            "44": { cuttable: false, engine: true, index: 2, lat: 4, lng: 4, name: "bar", setup: { route: "bar", hoselineCount: 1, count: 1 }, hoselineCountIn: 2}
         })
     })
 })

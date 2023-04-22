@@ -87,7 +87,7 @@ describe('Map', () => {
         await act(async () => render(<Provider store={store}><Map /></Provider>))
     })
     it('button clicks', async () => {
-        store.dispatch(setRoute({ name: "foo", coordinates: [] }))
+        store.dispatch(setRoute({ name: "foo", coordinates: [{}] }))
         store.dispatch(setSetup("foo"))
 
         await act(async () => render(<Provider store={store}><Map /></Provider>))
@@ -110,7 +110,7 @@ describe('Map', () => {
         await userEvent.keyboard('{Escape}')
     })
     it('open and close Visual Modal', async () => {
-        store.dispatch(setRoute({ name: "foo", coordinates: [] }))
+        store.dispatch(setRoute({ name: "foo", coordinates: [{}] }))
         store.dispatch(setSetup("foo"))
         await act(async () => render(<Provider store={store}><Map /></Provider>))
         await userEvent.click(await screen.findByRole('button', { name: 'Verlauf' }))

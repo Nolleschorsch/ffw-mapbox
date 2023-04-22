@@ -89,7 +89,7 @@ export const renderMarkers = (refs) => (dispatch, getState) => {
 
         popupRoot.render(<CustomPopup {...popupData} />)
 
-        let p = new mapboxgl.Popup().setDOMContent(popupNode)
+        let p = new mapboxgl.Popup({maxWidth: 'none'}).setDOMContent(popupNode)
 
         // marker-symbol for engine count
         let m = new mapboxgl.Marker()

@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import Table from 'react-bootstrap/Table'
 import Button from 'react-bootstrap/Button'
 
 
@@ -17,13 +18,14 @@ export const DataTable = (props) => {
         <div>
             <h5>{name}</h5>
             <Button onClick={() => setShowAll(!showAll)}>{showAll ? 'zeige nur Pumpen' : 'zeige Alle'}</Button>
-            <table className="table table-dark table-striped">
+            {/* <table className="table table-dark table-striped"> */}
+            <Table striped variant="dark">
                 <thead>
                     <tr>
                         <th>Distanz</th>
                         <th>Höhe</th>
                         <th>Eingangsdruck</th>
-                        <th>Ausgangsdruck</th>
+                        {/* <th>Ausgangsdruck</th> */}
                         <th>Pumpe</th>
                     </tr>
                 </thead>
@@ -43,13 +45,14 @@ export const DataTable = (props) => {
                                 <td>{distance}m</td>
                                 <td>{elevation}m</td>
                                 <td>{pressureIn}bar</td>
-                                <td>{pressureOut}bar</td>
+                                {/* <td>{pressureOut}bar</td> */}
                                 <td>{engine ? i + 1 === shownData.length ? 'Löschfahrzeug' : engineText : ''}</td>
                             </tr>
                         )
                     })}
                 </tbody>
-            </table>
+            {/* </table> */}
+            </Table>
         </div>
     )
 

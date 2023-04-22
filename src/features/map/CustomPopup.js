@@ -2,6 +2,7 @@ import React from 'react'
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import { cutCustomRouteAndUpdateSetup } from './mapfunctions';
+import { ListGroup } from 'react-bootstrap';
 
 
 export const CustomPopup = (props) => {
@@ -31,7 +32,7 @@ export const CustomPopup = (props) => {
         index,
         routeRef,
         previousRouteRef,
-        cuttable, setup
+        cuttable, setup, hoselineCountIn
     } = props
 
 
@@ -44,14 +45,18 @@ export const CustomPopup = (props) => {
             <Card.Body>
                 <Card.Title>{setup.count} x Pumpe {setup.engineType} ({pressureOut}bar {setup.volume}Liter/min)</Card.Title>
                 <Card.Text>
-                    Entfernung Start: {distance}m <br />
-                    Höhe über NN: {elevation}m <br />
-                    Längengrad: {lat} <br />
-                    Breiengrad: {lng} <br />
-                    Flow: {setup.flow} x {setup.hoselineCount} x {setup.count} = {setup.flow * setup.hoselineCount * setup.count}<br />
-                    Volume: {setup.volume} x {setup.count} = {setup.volume * setup.count}<br />
-                    Eingangsdruck: {pressureIn}bar <br />
-                    Ausgangsdruck: {pressureOut}bar <br />
+                    <ListGroup>
+                        <ListGroup.Item>Entfernung Start: {distance}m </ListGroup.Item>
+                        <ListGroup.Item>Höhe über NN: {elevation}m </ListGroup.Item>
+                        {/* <ListGroup.Item>Längengrad: {lat} </ListGroup.Item>
+                        <ListGroup.Item>Breiengrad: {lng} </ListGroup.Item> */}
+                        <ListGroup.Item>Zugänge: {hoselineCountIn}</ListGroup.Item>
+                        <ListGroup.Item>Abgänge: {setup.hoselineCount}</ListGroup.Item>
+                        {/* <ListGroup.Item>Flow: {setup.flow} x {setup.hoselineCount} x {setup.count} = {setup.flow * setup.hoselineCount * setup.count}</ListGroup.Item>
+                        <ListGroup.Item>Volume: {setup.volume} x {setup.count} = {setup.volume * setup.count}</ListGroup.Item> */}
+                        <ListGroup.Item>Eingangsdruck: {pressureIn}bar </ListGroup.Item>
+                        <ListGroup.Item>Ausgangsdruck: {pressureOut}bar </ListGroup.Item>
+                    </ListGroup>
                 </Card.Text>
                 {cuttable
                     ? <Button variant="primary" onClick={() => dispatch(cutCustomRouteAndUpdateSetup({

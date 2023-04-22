@@ -304,7 +304,7 @@ export const Map = (props) => {
                         <Col xs={6}>
                             <div ref={mapContainer} className="map-container" />
                         </Col>
-                        <Col xs={6} style={{ height: '100vh' }}>
+                        <Col xs={6} style={{ height: '100vh', overflowY: 'auto' }}>
                             <div className="sidebar mt-5 pt-5">
                                 <Setup />
                                 <Visual />

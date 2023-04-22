@@ -17,24 +17,29 @@ export const Visual = () => {
     return (
         <>
             <div>
-
+                blubb
             </div>
             <Accordion defaultActiveKey={setupState.openSetup}>
                 {mapState.routes.map((route, key) => {
                     const setup = setupState.setups[key]
                     const complete = setupIsComplete(setup)
                     const [badgeText, badgeVariant] = getBadgeTextAndVariant(complete)
+                    const distance = route.coordinates.slice(-1)[0].distancePartial
+                    const elevation = route.coordinates.slice(-1)[0].elevation - route.coordinates[0].elevation
                     return (
-                        <Accordion.Item eventKey={key} key={`visual-accordion-${key}`}>
+                        <Accordion.Item eventKey={key} key={`visual-accordion-${key}`} className='mb-3'>
                             <CustomToggle complete={complete} eventKey={key}>Info {route.displayName}</CustomToggle>
-                            <Badge pill bg={badgeVariant}>
+                            <Badge pill bg={badgeVariant} className='float-end'>
                                 {badgeText}
                             </Badge>
                             <Accordion.Body>
-                                {setup && <Material setup={setup} route={route} />}
-                                <LineChart name={route.displayName} pData={route.coordinates} />
-                                {setup && <DataTable setup={setup} route={route} />}
-                                <CustomToggle complete={complete} eventKey={key}>Ok</CustomToggle>
+                                <div style={{ textAlign: "center" }}>
+                                    Streckenlänge: {distance}m Höhenmeter: {elevation}m
+                                    {setupIsComplete(setup) && <Material setup={setup} route={route} />}
+                                    <LineChart name={route.displayName} pData={route.coordinates} />
+                                    {setupIsComplete(setup) && <DataTable setup={setup} route={route} />}
+                                    <CustomToggle complete={complete} eventKey={key}>Schließen</CustomToggle>
+                                </div>
                             </Accordion.Body>
                         </Accordion.Item>
                     )
