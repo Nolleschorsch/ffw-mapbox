@@ -34,6 +34,7 @@ import Setup from '../setup/Setup'
 import { getEnginePositions } from './mapfunctions';
 import CustomPopup from './CustomPopup'
 import MapControl from './MapControls';
+import MapControlNew from './MapControlNew';
 import { Visual } from '../visual/Visual';
 
 export const OFFROAD_THRESHOLD = 2 // distance in meters
@@ -291,12 +292,13 @@ export const Map = (props) => {
         handleToggleRouteEdit,
         resetMap,
         setShowSidebar,
+        showMarkers,
         showSidebar: mapState.showSidebar
     }
 
     return (
         <div>
-            <MapControl {...mapControlProps} />
+            <MapControlNew {...mapControlProps} />
             <Row style={{ height: "100%" }}>
                 {mapState.showSidebar
                     ?
@@ -306,6 +308,7 @@ export const Map = (props) => {
                         </Col>
                         <Col xs={6} style={{ height: '100vh', overflowY: 'auto' }}>
                             <div className="sidebar mt-5 pt-5">
+                                <Button onClick={() => dispatch(setShowSidebar(false))}>CLOSE</Button>
                                 <Setup />
                                 <Visual />
                             </div>
@@ -322,7 +325,7 @@ export const Map = (props) => {
             </Row>
             <Modal show={showSetup} fullscreen onHide={() => setShowSetup(false)}>
                 <Modal.Header closeButton>
-                    <Modal.Title>Setup Modal</Modal.Title>
+                    <Modal.Title>Aufbau Förderstrecke</Modal.Title>
                 </Modal.Header>
                 <Modal.Body style={{ textAlign: "center" }}>
                     <Setup />
@@ -331,7 +334,7 @@ export const Map = (props) => {
             </Modal>
             <Modal show={showChart} fullscreen onHide={() => setShowChart(false)}>
                 <Modal.Header closeButton>
-                    <Modal.Title>Linechart Modal</Modal.Title>
+                    <Modal.Title>Verlauf Förderstrecke</Modal.Title>
                 </Modal.Header>
                 <Modal.Body style={{ textAlign: "center" }}>
                     <Visual />

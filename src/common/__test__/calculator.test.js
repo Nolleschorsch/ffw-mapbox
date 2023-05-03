@@ -194,7 +194,7 @@ describe('addPressureData', () => {
                 pressureOut: 8
             }
         ], 1]
-        expect(addPressureData(data, setupData, 800, 0, previousSetupData)).toEqual(expected)
+        expect(addPressureData(data, setupData, 100, 0, previousSetupData)).toEqual(expected)
         //expect(addPressureDataOLD(data, setupData, 800, 0, previousSetupData)).toEqual(expected)
     })
     it('extra engine', () => {
@@ -268,7 +268,7 @@ describe('addPressureData', () => {
                 pressureOut: 8
             }
         ], 1]
-        expect(addPressureData(dataFar, setupData, 800, 0, previousSetupData)).toEqual(expected)
+        expect(addPressureData(dataFar, setupData, 100, 0, previousSetupData)).toEqual(expected)
         //expect(addPressureDataOLD(dataFar, setupData, 800, 0, previousSetupData)).toEqual(expected)
     })
     it('no extra engine openSystem', () => {

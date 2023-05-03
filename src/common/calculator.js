@@ -1,8 +1,10 @@
 import { getHoseLine } from '../data/hoseline/hoseline'
 
-export const getMinPressure = (hoselineSystem, fooFactor) => {
+export const getMinPressure = (hoselineSystem, minPressureFactor) => {
+    console.log({minPressureFactor})
     const base = hoselineSystem === 'openSystem' ? 0.1 : 1.5
-    return Math.round(base * (fooFactor / 100) * 100) / 100
+    console.log("min pressure: ", Math.round(base * (minPressureFactor / 100) * 100) / 100)
+    return Math.round(base * (minPressureFactor / 100) * 100) / 100
 }
 
 export const getNextCurrentPressure = (hoseline, previousPressure, next, prev) => {
@@ -54,10 +56,10 @@ export const setPressureAndEngine = (data) => {
 
 // TODO: make this work. currently not updating correctly => use old version below
 // NEW
-export const addPressureData = (data, setup, volumeIn, pressureOutPreviousRoute, previousSetupData) => {
+export const addPressureData = (data, setup, minPressureFactor, pressureOutPreviousRoute, previousSetupData) => {
 
     const {
-        pressureSystem, hoselineSize, hoselineCount, hoselineSystem, fooFactor, count, flow, volume
+        pressureSystem, hoselineSize, hoselineCount, hoselineSystem, count, flow, volume
     } = setup
 
     const hoseline = getHoseLine(hoselineSize, flow)
@@ -65,10 +67,8 @@ export const addPressureData = (data, setup, volumeIn, pressureOutPreviousRoute,
     let [pressureLossTotal, elevationDiff, distanceDiff, pressureDiff] = [0, 0, 0, 0]
     let pressureIn = pressureOutPreviousRoute
     let [pressureOut, currentPressure, previousPressure] = [pressureSystem, pressureSystem, pressureSystem]
-    // TODO: minPressure openSystem 0.1 is just an assumption and might be wrong
-    /* let _minPressure = hoselineSystem === 'openSystem' ? 0.1 : 1.5
-    let minPressure = Math.round(_minPressure * (fooFactor / 100) * 100) / 100 */
-    const minPressure = getMinPressure(hoselineSystem, fooFactor)
+
+    const minPressure = getMinPressure(hoselineSystem, minPressureFactor)
     let engine = true
     let previousIsEngine = false
 

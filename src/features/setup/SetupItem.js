@@ -157,7 +157,7 @@ export const SetupItem = (props) => {
             </Badge>
             <Accordion.Body>
                 <div style={{ textAlign: "center" }}>
-                    <h1 style={{ color: color }}>{setup.displayName}</h1>
+                    <h3 style={{ color: color }}>{setup.displayName}</h3>
                     <Form.Group className="mb-3">
                         <Form.Label>Umbennen</Form.Label>
                         <Form.Control value={setup.displayName}

@@ -38,7 +38,7 @@ export const Material = (props) => {
                 <h5>Material Strecke & Reserve</h5>
                 <ListGroup>
                     <ListGroup.Item>Pumpen: {engineCount + engineCountReserve} x {engineType}</ListGroup.Item>
-                    <ListGroup.Item>Schläuche: {hoseCount + hoseCountReserve} x {hoseType}-Schlauch</ListGroup.Item>
+                    <ListGroup.Item>Schläuche: {hoseCount + hoseCountReserve} x {hoseType}-Schlauch ({(hoseCount + hoseCountReserve) * 20}m)</ListGroup.Item>
                     <ListGroup.Item>Füllbehälter {tankCount}</ListGroup.Item>
                 </ListGroup>
             </Col>
@@ -46,7 +46,7 @@ export const Material = (props) => {
                 <h5>Material Strecke</h5>
                 <ListGroup>
                     <ListGroup.Item>Pumpen: {engineCount} x {engineType}</ListGroup.Item>
-                    <ListGroup.Item>Schläuche: {hoseCount} x {hoseType}-Schlauch</ListGroup.Item>
+                    <ListGroup.Item>Schläuche: {hoseCount} x {hoseType}-Schlauch ({hoseCount * 20}m)</ListGroup.Item>
                     <ListGroup.Item>Füllbehälter {tankCount}</ListGroup.Item>
                 </ListGroup>
             </Col>
@@ -54,7 +54,7 @@ export const Material = (props) => {
                 <h5>Material Reserve</h5>
                 <ListGroup>
                     <ListGroup.Item>Pumpen: {engineCountReserve} x {engineType}</ListGroup.Item>
-                    <ListGroup.Item>Schläuche: {hoseCountReserve}</ListGroup.Item>
+                    <ListGroup.Item>Schläuche: {hoseCountReserve} x {hoseType}-Schlauch ({hoseCountReserve * 20}m)</ListGroup.Item>
                 </ListGroup>
 
             </Col>

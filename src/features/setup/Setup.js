@@ -1,8 +1,13 @@
-import React from 'react'
+import React, { useState, useMemo } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import Accordion from 'react-bootstrap/Accordion'
+import InputGroup from 'react-bootstrap/InputGroup'
 import Form from 'react-bootstrap/Form'
-import { setDestinationVolume, setSetupData } from './setupSlice'
+import Row from 'react-bootstrap/Row'
+import Col from 'react-bootstrap/Col'
+import Button from 'react-bootstrap/Button'
+import debounce from 'lodash/debounce';
+import { setDestinationVolume, setMinPressureFactor, setSetupData } from './setupSlice'
 import { getRouteColor } from '../../common/colors'
 import { addPressureData } from '../../common/calculator'
 import { setData } from '../map/mapSlice'
@@ -52,7 +57,7 @@ export const setupIsComplete = (setup) => {
         'hoselineSize',
         'hoselineCount',
         'hoselineSystem',
-        'fooFactor',
+        //'fooFactor',
         'count',
         'flow',
         'route'
@@ -71,6 +76,7 @@ export const updateRouteData = (name) => (dispatch, getState) => {
 
     let index = setupState.setups.findIndex(s => s.route === name)
     const destinationVolume = setupState.destinationVolume
+    const minPressureFactor = setupState.minPressureFactor
 
     while (index < setupState.setups.length) {
         const setup = setupState.setups[index]
@@ -90,7 +96,7 @@ export const updateRouteData = (name) => (dispatch, getState) => {
             const pressureOutPreviousRoute = index === 0 ? 0 : getState().present.mapbox.routes[index - 1].coordinates.slice(-1)[0].pressureIn
             const previousSetup = index === 0 ? {} : getState().present.setup.setups[index - 1]
             const updatedSetup = getState().present.setup.setups[index]
-            const [pData, count] = addPressureData([...route.coordinates], updatedSetup, destinationVolume, pressureOutPreviousRoute, previousSetup)
+            const [pData, count] = addPressureData([...route.coordinates], updatedSetup, minPressureFactor, pressureOutPreviousRoute, previousSetup)
             dispatch(setData({ route: route.name, coordinates: pData, index, count }))
         } else {
             const noPData = route.coordinates.map(x => {
@@ -113,7 +119,7 @@ export const updateRouteData = (name) => (dispatch, getState) => {
                 route: setup.route,
                 displayName: setup.displayName,
                 customName: setup.customName,
-                fooFactor: 100,
+                //fooFactor: 100,
                 hoselineSystem: setup.hoselineSystem
             }
             dispatch(setSetupData(bla))
@@ -182,6 +188,7 @@ export const updateRoute = (routeName) => (dispatch, getState) => {
     const setups = setupData.setups
     const routes = routeData.routes
     const destinationVolume = setupData.destinationVolume
+    const minPressureFactor = setupData.minPressureFactor
 
     const index = setups.findIndex(s => s.route === routeName)
     const setup = setups[index]
@@ -193,7 +200,7 @@ export const updateRoute = (routeName) => (dispatch, getState) => {
     let pData
 
     if (setupIsComplete(setup)) {
-        const [data, count] = addPressureData([...route.coordinates], setup, destinationVolume, pressureOutPreviousRoute, previousSetup)
+        const [data, count] = addPressureData([...route.coordinates], setup, minPressureFactor, pressureOutPreviousRoute, previousSetup)
         pData = data
     } else {
         const data = route.coordinates.map(x => {
@@ -259,9 +266,60 @@ export const Setup = () => {
         }
     }
 
+    const handleMinPressureFactorChange = (event) => {
+        console.log("AYEEEE", event)
+        const { target: { value } } = event
+        dispatch(setMinPressureFactor(parseInt(value) + 100))
+        setup.setups.forEach((setup, index) => {
+            const updatedSetup = dispatch(updateSetup(setup.route))
+            dispatch(setSetupData(updatedSetup))
+            const updatedRoute = dispatch(updateRoute(setup.route))
+            dispatch(setData({ route: updatedRoute.name, coordinates: updatedRoute.coordinates, index }))
+        })
+    }
+
+    const debounceMinPressureFactorChange = useMemo(() => { return debounce(handleMinPressureFactorChange, 100) }, [setup.minPressureFactor])
+
+    const handleIncreaseMinPressureFactor = (event) => {
+        if (setup.minPressureFactor < 200) {
+            dispatch(setMinPressureFactor(setup.minPressureFactor + 5))
+            setup.setups.forEach((setup, index) => {
+                const updatedSetup = dispatch(updateSetup(setup.route))
+                dispatch(setSetupData(updatedSetup))
+                const updatedRoute = dispatch(updateRoute(setup.route))
+                dispatch(setData({ route: updatedRoute.name, coordinates: updatedRoute.coordinates, index }))
+            })
+        }
+    }
+
+    const handleDecreaseMinPressureFactor = (event) => {
+        if (setup.minPressureFactor > 100) {
+            dispatch(setMinPressureFactor(setup.minPressureFactor - 5))
+            setup.setups.forEach((setup, index) => {
+                const updatedSetup = dispatch(updateSetup(setup.route))
+                dispatch(setSetupData(updatedSetup))
+                const updatedRoute = dispatch(updateRoute(setup.route))
+                dispatch(setData({ route: updatedRoute.name, coordinates: updatedRoute.coordinates, index }))
+            })
+        }
+    }
+
     return (
         <>
             <Form.Group className="mb-3">
+                <Form.Label>MinPressureFactor</Form.Label>
+                <InputGroup>
+                    <Button onClick={handleDecreaseMinPressureFactor}>-</Button>
+                    <Form.Control value={setup.minPressureFactor - 100} disabled />
+                    <Button onClick={handleIncreaseMinPressureFactor}>+</Button>
+                </InputGroup>
+                <InputGroup>
+                    <InputGroup.Text>geschlossenes System</InputGroup.Text>
+                    <Form.Control disabled value={Math.round((1.5 * setup.minPressureFactor / 100) * 100) / 100} />
+                    <InputGroup.Text>offenes System</InputGroup.Text>
+                    <Form.Control disabled value={Math.round((0.1 * setup.minPressureFactor / 100) * 100) / 100} />
+                </InputGroup>
+
                 <Form.Label htmlFor="destinationVolume">Förderstrom</Form.Label>
                 <Form.Select id="destinationVolume" size="lg" value={setup.destinationVolume}
                     onChange={handleDestinationVolumeChange}>

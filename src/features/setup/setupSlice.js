@@ -2,7 +2,7 @@ import { createSlice } from '@reduxjs/toolkit'
 //import initialStateDebug from '../../debug/bla.json';
 import initialStateDebug from '../../debug/stateRouteIsSet.json';
 
-export const initialState = { setups: [], destinationVolume: 1600, showSetup: false, openSetup: null }
+export const initialState = { setups: [], destinationVolume: '', minPressureFactor: 100, showSetup: false, openSetup: null }
 
 export const initialStateFuck = initialStateDebug.present.setup
 
@@ -32,10 +32,16 @@ export const setupSlice = createSlice({
                 destinationVolume: action.payload
             }
         },
+        setMinPressureFactor(state, action) {
+            return {
+                ...state,
+                minPressureFactor: action.payload
+            }
+        },
         addSetup(state, action) {
             if (!state.setups.filter(x => x.route === action.payload.routeName).length) {
                 const newSetups = [...state.setups]
-                newSetups.splice(action.payload.index, 0, { route: action.payload.routeName, fooFactor: 100 })
+                newSetups.splice(action.payload.index, 0, { route: action.payload.routeName })
                 return {
                     ...state,
                     setups: newSetups.map((s, i) => s.customName ? s : Object.assign({}, s, { displayName: `Strecke ${i + 1}` }))
@@ -46,7 +52,7 @@ export const setupSlice = createSlice({
             return { ...state, setups: [...state.setups.filter(x => x.route !== action.payload)] }
         },
         setSetup(state, action) {
-            return { ...state, setups: [{ route: action.payload, displayName: "Strecke 1", customName: false, fooFactor: 100 }] }
+            return { ...state, setups: [{ route: action.payload, displayName: "Strecke 1", customName: false}] }
         },
         /* setSetupData(state, action) {
             const {name, ...data} = action.payload
@@ -86,6 +92,7 @@ export const {
     setOpenSetup,
     setShowSetup,
     setDestinationVolume,
+    setMinPressureFactor,
     addSetup,
     removeSetup,
     setSetup,

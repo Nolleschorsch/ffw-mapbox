@@ -6,6 +6,15 @@ import Container from 'react-bootstrap/Container'
 import Nav from 'react-bootstrap/Nav'
 import NavDropdown from 'react-bootstrap/NavDropdown'
 import Button from 'react-bootstrap/Button'
+import {
+    Pencil,
+    LayoutTextSidebarReverse, 
+    ArrowCounterclockwise,
+    ArrowClockwise,
+    EyeFill,
+    EyeSlashFill,
+    XCircleFill
+} from 'react-bootstrap-icons';
 import { setOpenSetup } from '../setup/setupSlice'
 
 export const handleSetupItemClick = (setShowSetup, key) => (dispatch, getState) => {
@@ -44,28 +53,30 @@ export const MapControl = (props) => {
                     <Nav className="me-auto" variant="pills">
                         <Nav.Item>
                             <Button disabled={!hasPast}
-                                onClick={() => dispatch(ActionCreators.undo())}>Rückgängig</Button>
+                                onClick={() => dispatch(ActionCreators.undo())} size="lg"><ArrowCounterclockwise/></Button>
+                        </Nav.Item>
+                        <Nav.Item>
+                            {/* TODO: add popup e.g. modal an require confirmation (resets map) */}
+                            <Button onClick={() => resetMap()} size="lg"><XCircleFill /></Button>
                         </Nav.Item>
                         <Nav.Item>
                             <Button disabled={!hasFuture}
-                                onClick={() => dispatch(ActionCreators.redo())}>Wiederholen</Button>
+                                onClick={() => dispatch(ActionCreators.redo())} size="lg"><ArrowClockwise /></Button>
                         </Nav.Item>
                         <Nav.Item>
-                            <Button onClick={() => toggleRoutesAndEngineMarkers()}>
-                                Toggle Routes/Markers
+                            <Button onClick={() => toggleRoutesAndEngineMarkers()} size="lg">
+                                <EyeFill />
                             </Button>
                         </Nav.Item>
                         <Nav.Item>
-                            <Button onClick={() => handleToggleRouteEdit()}>Toggle Route Edit</Button>
+                            <Button onClick={() => handleToggleRouteEdit()} size="lg"><Pencil /></Button>
                         </Nav.Item>
+                        
                         <Nav.Item>
-                            <Button onClick={() => resetMap()}>Karte zurücksetzen</Button>
-                        </Nav.Item>
-                        <Nav.Item>
-                            <Button onClick={() => dispatch(setShowSidebar(!showSidebar))}>Toggle Sidebar</Button>
+                            <Button onClick={() => dispatch(setShowSidebar(!showSidebar))} size="lg"><LayoutTextSidebarReverse /></Button>
                         </Nav.Item>
                     </Nav>
-                    <Nav>
+                   {/*  <Nav>
                         <NavDropdown title="Aufbau">
                             {setupData.setups.map((setup, key) => {
                                 return <NavDropdown.Item onClick={() => dispatch(handleSetupItemClick(setShowSetup, key))} key={key}>Aufbau {setup.displayName}</NavDropdown.Item>
@@ -78,7 +89,7 @@ export const MapControl = (props) => {
                                 return <NavDropdown.Item onClick={() => dispatch(handleChartItemClick(setShowChart, key))} key={key}>Verlauf {setup.displayName}</NavDropdown.Item>
                             })}
                         </NavDropdown>
-                    </Nav>
+                    </Nav> */}
                 </Navbar.Collapse>
             </Container>
         </Navbar >
