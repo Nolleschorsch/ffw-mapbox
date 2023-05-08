@@ -17,7 +17,7 @@ export const CustomToggle = ({ children, eventKey, disabled, color, complete }) 
     const decoratedOnClick = useAccordionButton(eventKey)
 
     return (
-        <Button  disabled={disabled} variant={ complete ? "success" : "danger" }
+        <Button  size="lg" disabled={disabled} variant={ complete ? "success" : "danger" }
             onClick={decoratedOnClick}>{children}</Button>
     )
 }

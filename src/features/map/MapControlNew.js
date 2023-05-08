@@ -47,8 +47,7 @@ export const MapControl = (props) => {
     const hasPast = past.length
 
     return (
-
-        <ButtonToolbar className="justify-content-between fixed-top">
+        <Navbar fixed="top" className="justify-content-between m-1">
             <ButtonGroup>
                 <Button disabled={!hasPast}
                     onClick={() => dispatch(ActionCreators.undo())} size="lg"><ArrowCounterclockwise /></Button>
@@ -74,8 +73,7 @@ export const MapControl = (props) => {
                     {showSidebar ? <ArrowBarRight /> : <ArrowBarLeft /> }<LayoutTextSidebarReverse />
                 </Button>
             </ButtonGroup>
-        </ButtonToolbar>
-
+        </Navbar>
 
     )
 

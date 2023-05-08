@@ -1,8 +1,10 @@
 import React from 'react'
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
+import { Speedometer } from 'react-bootstrap-icons'
 import { cutCustomRouteAndUpdateSetup } from './mapfunctions';
 import { ListGroup } from 'react-bootstrap';
+import './Custompopup.css'
 
 
 export const CustomPopup = (props) => {
@@ -40,7 +42,7 @@ export const CustomPopup = (props) => {
 
 
 
-        <Card>
+        <Card className="popup">
             {/* <Card.Img variant="top" src="holder.js/100px180" /> */}
             <Card.Body>
                 <Card.Title>{setup.count} x Pumpe {setup.engineType} ({pressureOut}bar {setup.volume}Liter/min)</Card.Title>
@@ -54,7 +56,7 @@ export const CustomPopup = (props) => {
                         <ListGroup.Item>Abgänge: {setup.hoselineCount}</ListGroup.Item>
                         {/* <ListGroup.Item>Flow: {setup.flow} x {setup.hoselineCount} x {setup.count} = {setup.flow * setup.hoselineCount * setup.count}</ListGroup.Item>
                         <ListGroup.Item>Volume: {setup.volume} x {setup.count} = {setup.volume * setup.count}</ListGroup.Item> */}
-                        <ListGroup.Item>Eingangsdruck: {pressureIn}bar </ListGroup.Item>
+                        <ListGroup.Item><Speedometer />Eingangsdruck: {pressureIn}bar </ListGroup.Item>
                         <ListGroup.Item>Ausgangsdruck: {pressureOut}bar </ListGroup.Item>
                     </ListGroup>
                 </Card.Text>

@@ -3,6 +3,7 @@ import { useDispatch } from 'react-redux'
 import Accordion from 'react-bootstrap/Accordion'
 import Badge from 'react-bootstrap/Badge'
 import Form from 'react-bootstrap/Form'
+import { Tools } from 'react-bootstrap-icons'
 import { setSetupData } from './setupSlice'
 import CustomToggle from '../../common/customtoggle'
 import { availableEngines } from '../../data/engine/engines'
@@ -150,7 +151,7 @@ export const SetupItem = (props) => {
     return (
         <Accordion.Item eventKey={eventKey} className="mb-3">
             <CustomToggle complete={complete} eventKey={eventKey} disabled={disabled}>
-                Aufbau {setup.displayName}
+                <Tools />Aufbau {setup.displayName}
             </CustomToggle>
             <Badge pill bg={badgeVariant} className='float-end'>
                 {badgeText}
