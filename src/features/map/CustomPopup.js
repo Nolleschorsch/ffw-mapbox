@@ -4,7 +4,6 @@ import Card from 'react-bootstrap/Card';
 import { Speedometer } from 'react-bootstrap-icons'
 import { cutCustomRouteAndUpdateSetup } from './mapfunctions';
 import { ListGroup } from 'react-bootstrap';
-import './Custompopup.css'
 
 
 export const CustomPopup = (props) => {
